@@ -6,7 +6,7 @@
 package controller;
 
 import javax.net.ssl.SSLSocket;
-import model.User;
+import dataBase.model.User;
 
 /**
  *

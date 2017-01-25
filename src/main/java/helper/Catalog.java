@@ -6,7 +6,7 @@
 package helper;
 
 import java.util.List;
-import dto.Connections;
+import dataBase.dto.Connections;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

@@ -15,7 +15,7 @@ public class IoHelper {
         boolean isImg = false;
         String[] splitName = fileName.split(".");
         String fileExtension = splitName[splitName.length -1];
- 
+
         if(fileExtension.equalsIgnoreCase("png") || fileExtension.equalsIgnoreCase("jpg")
            || fileExtension.equalsIgnoreCase("jpeg") || fileExtension.equalsIgnoreCase("gif")
            || fileExtension.equalsIgnoreCase("raw")){
