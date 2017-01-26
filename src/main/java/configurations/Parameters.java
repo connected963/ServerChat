@@ -17,9 +17,9 @@ public class Parameters {
     public static String nameDataBase = "connectedChat";
     public static String schemaDataBase = "public";
     public static Integer socketPort = 1212;
-    public static Long timeToUpdateThreads = 60000l;
+    public static Long timeToUpdateThreads = 1000l;
     public static Integer maxNumberOfThreads = 6;
     public static Integer numberOfRequisitionsPerTimeToAddNewThread = 15;
-    public static Integer numberOfRequisitionsPerTimeToRemoveThread = 10;
+    public static Integer numberOfRequisitionsPerTimeToRemoveThread = 5;
     
 }

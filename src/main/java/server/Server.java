@@ -24,6 +24,8 @@ public class Server {
     private Server() {
         this.connections = new ConcurrentHashMap<>();
 
+        initializeKeystore();
+
         try {
             final SSLServerSocketFactory serverSocketFactory = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
             this.serverSocket = (SSLServerSocket) serverSocketFactory.createServerSocket(Parameters.socketPort);
@@ -45,6 +47,12 @@ public class Server {
 
     public Map<String, Connection> getConnections() {
         return connections;
+    }
+
+    private void initializeKeystore(){
+        System.setProperty("javax.net.ssl.keyStore","C:/Program Files/Java/jre1.8.0_121/bin/keystore.jks");
+        System.setProperty("javax.net.ssl.keyStorePassword","password");
+        System.setProperty("javax.net.debug","all");
     }
 
     private static class ServerInstance {

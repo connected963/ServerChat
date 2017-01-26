@@ -20,7 +20,7 @@ import javax.net.ssl.SSLServerSocketFactory;
 public class ChatServer {
 
     public ChatServer() throws IOException {
-        ThreadManager threadManager = new ThreadManager();
+        final ThreadManager threadManager = new ThreadManager();
         threadManager.manangeServerRequests();
     }
 

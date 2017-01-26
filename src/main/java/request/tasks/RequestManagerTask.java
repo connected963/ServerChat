@@ -6,7 +6,6 @@ import request.interfaces.RequestManager;
 import server.Server;
 
 import javax.net.ssl.SSLSocket;
-import java.io.IOException;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicLong;
@@ -49,11 +48,11 @@ public class RequestManagerTask implements Callable<Void>, RequestManager {
 
             this.countOfConnections.incrementAndGet();
 
-            ProtocolEnum action = ProtocolEnum.valueOf(SocketHelper.readInteger(socket)).orElseGet(() -> ProtocolEnum.ACTION_NOT_FOUND);
+            final ProtocolEnum action = ProtocolEnum.valueOf(SocketHelper.readInteger(socket)).orElseGet(() -> ProtocolEnum.ACTION_NOT_FOUND);
 
             action.execute(socket);
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             LOGGER.log(Level.SEVERE, e.getMessage());
         }
     }

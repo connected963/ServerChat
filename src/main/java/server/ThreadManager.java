@@ -43,10 +43,10 @@ public class ThreadManager {
             try {
                 Thread.sleep(Parameters.timeToUpdateThreads);
 
-                if (this.countOfConnections.get() >= Parameters.numberOfRequisitionsPerTimeToAddNewThread && this.tasks.size() < Parameters.maxNumberOfThreads) {
+                if (this.countOfConnections.get() / tasks.size() >= Parameters.numberOfRequisitionsPerTimeToAddNewThread && this.tasks.size() < Parameters.maxNumberOfThreads) {
                     addNewThread();
                 }
-                else if (this.countOfConnections.get() <= Parameters.numberOfRequisitionsPerTimeToRemoveThread && this.tasks.size() > 1) {
+                else if (this.countOfConnections.get() / tasks.size() <= Parameters.numberOfRequisitionsPerTimeToRemoveThread && this.tasks.size() > 1) {
                     removeThread();
                 }
 
